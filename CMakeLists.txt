@@ -1,15 +1,18 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.22)
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/stm32-cmake/cmake/stm32_gcc.cmake)
+#set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/gcc-arm-none-eabi.cmake)
+#include("cmake/gcc-arm-none-eabi.cmake")
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 
 project(DustSucker ASM C CXX)
-set(STM32_CUBE_H7_PATH /opt/STM32CubeH7)
+set(STM32_CUBE_H7_PATH ${CMAKE_CURRENT_SOURCE_DIR}/STM32CubeH7)
 #Use freertos from STM32CubeH7
 set(FREERTOS_PATH ${STM32_CUBE_H7_PATH}/Middlewares/Third_Party/FreeRTOS)
 
 #Find CMSIS for both cores
-find_package(HAL 1.8.0 EXACT COMPONENTS STM32H743ZI_M7 REQUIRED)
+find_package(HAL 1.11.5 EXACT COMPONENTS STM32H743ZI_M7 REQUIRED)
 find_package(CMSIS COMPONENTS STM32H743ZI_M7 REQUIRED )
 
 
