@@ -10,7 +10,7 @@
 	path = STM32CubeH5
 	url = https://github.com/STMicroelectronics/STM32CubeH5.git
 	branch = main
-[submodule "STM32CubeL5"]
-	path = STM32CubeL5
-	url = https://github.com/STMicroelectronics/STM32CubeL5.git
-	branch = master	
+[submodule "STM32CubeL4"]
+	path = STM32CubeL4
+	url = https://github.com/STMicroelectronics/STM32CubeL4.git
+	branch = master
