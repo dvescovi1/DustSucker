@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/stm32-cmake/cmake/stm32_gcc.cmake)
+#set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/gcc-arm-none-eabi.cmake)
+#include("cmake/gcc-arm-none-eabi.cmake")
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
