@@ -1,6 +1,6 @@
 {
-  "board": "NUCLEO-H563ZI",
-  "device": "STM32H563ZIT6",
+  "board": "STM32L562E-DK",
+  "device": "STM32L562QEI6Q",
   "core": "Cortex-M33",
   "order": 0,
   "toolchain": "GCC"

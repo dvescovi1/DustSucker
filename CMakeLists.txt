@@ -5,13 +5,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 
 project(DustSucker ASM C CXX)
-set(STM32_CUBE_H5_PATH ${CMAKE_CURRENT_SOURCE_DIR}/STM32CubeH5)
-#Use freertos from STM32CubeH5
+set(STM32_CUBE_H5_PATH ${CMAKE_CURRENT_SOURCE_DIR}/STM32CubeL5)
+#Use freertos from STM32CubeL5
 set(FREERTOS_PATH ${STM32_CUBE_H5_PATH}/Middlewares/Third_Party/FreeRTOS)
 
-#Find CMSIS for both cores
-find_package(HAL 1.5.0 EXACT COMPONENTS STM32H563ZI REQUIRED)
-find_package(CMSIS COMPONENTS STM32H563ZI REQUIRED )
+#Find CMSIS
+find_package(HAL COMPONENTS STM32L5xx REQUIRED)
+find_package(CMSIS COMPONENTS STM32L5xx REQUIRED )
 
 
 find_package(FreeRTOS COMPONENTS ARM_CM33)
@@ -19,8 +19,8 @@ find_package(FreeRTOS COMPONENTS ARM_CM33)
 
 add_library(baseHAL INTERFACE)
 target_link_libraries(baseHAL INTERFACE
-    HAL::STM32::H5::M33::CORTEX
-    CMSIS::STM32::H563ZI::M33
+    HAL::STM32::L5::M33::CORTEX
+    CMSIS::STM32::L5xx::M33
     STM32::NoSys
     )
 add_library(freertos INTERFACE)
@@ -35,8 +35,8 @@ target_include_directories(dustSucker PRIVATE Inc)
 target_link_libraries(dustSucker PRIVATE
     baseHAL
     freertos
-    HAL::STM32::H5::M33::GPIO
-    HAL::STM32::H5::M33::RCC
+    HAL::STM32::L5::M33::GPIO
+    HAL::STM32::L5::M33::RCC
     )
 ADD_CUSTOM_TARGET(do_always ALL COMMAND ${CMAKE_OBJCOPY} -O ihex dustSucker.elf dustSucker.hex
                                 DEPENDS dustSucker)
