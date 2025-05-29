@@ -1,6 +1,7 @@
 [submodule "stm32-cmake"]
 	path = stm32-cmake
-	url = https://github.com/ObKo/stm32-cmake.git
+	url = https://github.com/dvescovi1/stm32-cmake.git
+	branch = master
 [submodule "STM32CubeH7"]
 	path = STM32CubeH7
 	url = https://github.com/STMicroelectronics/STM32CubeH7.git
@@ -9,3 +10,7 @@
 	path = STM32CubeH5
 	url = https://github.com/STMicroelectronics/STM32CubeH5.git
 	branch = main
+[submodule "STM32CubeL5"]
+	path = STM32CubeL5
+	url = https://github.com/STMicroelectronics/STM32CubeL5.git
+	branch = master	
